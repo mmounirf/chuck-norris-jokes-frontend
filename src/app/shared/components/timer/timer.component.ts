@@ -1,4 +1,4 @@
-import { MatSnackBar } from '@angular/material';
+import { AlertService } from './../../services/alert.service';
 import { JokesManagementService } from './../../services/jokes-management.service';
 import { TimerManagementService } from './../../services/timer-management.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
@@ -18,7 +18,7 @@ export class TimerComponent implements OnInit {
   constructor(
     private timerManagement: TimerManagementService,
     private jokesManagement: JokesManagementService,
-    private snackBar: MatSnackBar
+    private alert: AlertService
 
     ) { }
   timer: number;
@@ -26,6 +26,7 @@ export class TimerComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.startCountdown();
     this.timerManagement.isCounting.subscribe((isCounting) => {
       isCounting ? this.startCountdown() : this.stopCountdown();
@@ -40,7 +41,7 @@ export class TimerComponent implements OnInit {
           this.finalCount.emit(true);
           this.resetCountdown();
         } else {
-          this.snackBar.open('⚠️ Favorite list max limit reached', 'Dismiss');
+          this.alert.show('⚠️ Favorite list max limit reached', 'Dismiss');
           this.finalCount.emit(false);
         }
       }

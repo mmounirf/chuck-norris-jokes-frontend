@@ -21,9 +21,8 @@ export class PublicLayoutComponent implements OnInit {
   toggleCount = new EventEmitter<boolean>();
   ngOnInit() {
     this.jokesManagement.setRandomJokes(this.route.snapshot.data.jokes.data);
-    const storedJokes = JSON.parse(window.localStorage.getItem('favorite_jokes'));
+    const storedJokes = JSON.parse(window.localStorage.getItem('CH_favorite_jokes'));
     storedJokes ? this.jokesManagement.setFavoriteJokes(storedJokes) : this.jokesManagement.setFavoriteJokes([]);
-
   }
 
   getRandomJokes(): Array<Joke> {

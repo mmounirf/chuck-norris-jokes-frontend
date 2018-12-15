@@ -2,7 +2,6 @@
   <div class="public-jokes-container">
     <mat-card class="public-jokes-card">
       <mat-card-header>
-        <mat-icon mat-card-avatar>shuffle</mat-icon>
         <mat-card-title>Random Jokes</mat-card-title>
       </mat-card-header>
       <mat-card-content>
@@ -14,10 +13,9 @@
     <mat-card class="favorites-jokes-card">
         <app-timer [count]="5" (finalCount)="addJoke($event)"></app-timer>
       <mat-card-header>
-        <mat-icon mat-card-avatar>favorite</mat-icon>
         <mat-card-title>Favorites Jokes</mat-card-title>
         <span class="spacer"></span>
-        <button mat-icon-button (click)="toggleCounting()">
+        <button mat-icon-button (click)="toggleCounting()" color="accent">
             <mat-icon>{{isCounting ? 'timer' : 'timer_off'}}</mat-icon>
         </button>
       </mat-card-header>

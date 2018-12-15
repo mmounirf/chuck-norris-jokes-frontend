@@ -1,7 +1,7 @@
+import { AlertService } from './../../services/alert.service';
 import { JokesManagementService } from './../../services/jokes-management.service';
 import { Joke } from 'src/app/shared/interfaces/joke';
 import { Component, OnInit, Input } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-jokes',
@@ -13,7 +13,7 @@ export class JokesComponent implements OnInit {
   @Input() type: string;
   constructor(
     private jokesManagement: JokesManagementService,
-    public snackBar: MatSnackBar
+    public alert: AlertService
     ) { }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class JokesComponent implements OnInit {
         this.jokesManagement.addToFavorites(joke);
       } else {
         // If no enough space, show warnning to user.
-        this.snackBar.open('⚠️ Favorite list max limit reached', 'Dismiss');
+        this.alert.show('⚠️ Favorite list max limit reached', 'Dismiss');
       }
     } else {
       // If joke already exists in favorite list, remove it.

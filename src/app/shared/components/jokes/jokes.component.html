@@ -1,7 +1,7 @@
 <ul class="random-jokes-list" *ngIf="type==='random'">
     <li *ngFor="let joke of jokes; last as isLast" id="{{joke.id}}">
       <div class="joke-container">
-          <button mat-icon-button (click)="addToFavorites(joke)">
+          <button mat-icon-button (click)="addToFavorites(joke)" color="primary">
               <mat-icon>{{isInFavorites(joke.id) ? 'favorite' : 'favorite_border'}}</mat-icon>
           </button>
           <p>{{joke.joke}}</p>
@@ -14,7 +14,7 @@
 <ul class="favorite-jokes-list" *ngIf="type==='favorites'">
     <li *ngFor="let joke of jokes; last as isLast" id="{{joke.id}}">
       <div class="joke-container">
-          <button mat-icon-button (click)="removeFromFavorites(joke.id)">
+          <button mat-icon-button (click)="removeFromFavorites(joke.id)" color="warn">
               <mat-icon>delete_forever</mat-icon>
           </button>
           <p>{{joke.joke}}</p>

@@ -28,12 +28,12 @@ export class JokesManagementService {
 
   addToFavorites(joke) {
     this.favoriteJokes.push(joke);
-    window.localStorage.setItem('favorite_jokes', JSON.stringify(this.getFavoriteJokes()))
+    window.localStorage.setItem('CH_favorite_jokes', JSON.stringify(this.getFavoriteJokes()))
   }
 
   removeFromFavorites(id) {
     this.setFavoriteJokes([...this.favoriteJokes.filter((joke) => joke.id !== id)]);
-    window.localStorage.setItem('favorite_jokes', JSON.stringify(this.getFavoriteJokes()));
+    window.localStorage.setItem('CH_favorite_jokes', JSON.stringify(this.getFavoriteJokes()));
   }
 
   isInFavorites(id) {

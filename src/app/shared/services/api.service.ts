@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 
 const API_URL = environment.apiUrl;
 
@@ -20,5 +21,9 @@ export class ApiService {
 
   public getRandomJoke(): Observable<any> {
     return this.http.get<Array<Joke>>(`${API_URL}/jokes/1`);
+  }
+
+  public login(body): Observable<User> {
+    return this.http.post<User>(`${API_URL}/login`, body);
   }
 }
