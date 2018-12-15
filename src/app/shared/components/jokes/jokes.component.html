@@ -1,7 +1,7 @@
 <ul class="random-jokes-list" *ngIf="type==='random'">
     <li *ngFor="let joke of jokes; last as isLast" id="{{joke.id}}">
       <div class="joke-container">
-          <button mat-icon-button (click)="toggleCount()">
+          <button mat-icon-button (click)="addToFavorites(joke)">
               <mat-icon>{{isInFavorites(joke.id) ? 'favorite' : 'favorite_border'}}</mat-icon>
           </button>
           <p>{{joke.joke}}</p>
