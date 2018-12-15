@@ -18,7 +18,7 @@ export class ApiService {
     return this.http.get<Array<Joke>>(`${API_URL}/jokes`);
   }
 
-  public getRandomJoke(): Observable<Array<Joke>> {
-    return this.http.get<Array<Joke>>(`${API_URL}/joke`);
+  public getRandomJoke(): Observable<any> {
+    return this.http.get<Array<Joke>>(`${API_URL}/jokes/1`);
   }
 }

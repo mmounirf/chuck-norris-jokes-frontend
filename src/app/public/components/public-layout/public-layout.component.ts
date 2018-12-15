@@ -1,3 +1,4 @@
+import { ApiService } from './../../../shared/services/api.service';
 import { TimerManagementService } from './../../../shared/services/timer-management.service';
 import { JokesManagementService } from './../../../shared/services/jokes-management.service';
 import { Joke } from 'src/app/shared/interfaces/joke';
@@ -13,7 +14,8 @@ export class PublicLayoutComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private jokesManagement: JokesManagementService,
-    private timerManagement: TimerManagementService
+    private timerManagement: TimerManagementService,
+    private apiService: ApiService
   ) { }
   isCounting = true;
   toggleCount = new EventEmitter<boolean>();
@@ -35,6 +37,16 @@ export class PublicLayoutComponent implements OnInit {
   toggleCounting() {
     this.isCounting = !this.isCounting;
     this.isCounting ? this.timerManagement.startCounting() : this.timerManagement.stopCounting();
+  }
+
+  addJoke(isCounting) {
+    if (isCounting) {
+      this.apiService.getRandomJoke().subscribe((joke) => {
+        this.jokesManagement.addToFavorites(joke.data[0]);
+      });
+    } else {
+      this.toggleCounting();
+    }
   }
 
 }

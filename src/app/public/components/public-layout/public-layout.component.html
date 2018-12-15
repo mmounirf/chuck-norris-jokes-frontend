@@ -12,7 +12,7 @@
   </div>
   <div class="favorites-jokes-container">
     <mat-card class="favorites-jokes-card">
-        <app-timer [count]="5"></app-timer>
+        <app-timer [count]="5" (finalCount)="addJoke($event)"></app-timer>
       <mat-card-header>
         <mat-icon mat-card-avatar>favorite</mat-icon>
         <mat-card-title>Favorites Jokes</mat-card-title>

@@ -1,5 +1,6 @@
+import { JokesManagementService } from './../../services/jokes-management.service';
 import { TimerManagementService } from './../../services/timer-management.service';
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +13,12 @@ import { timer, Subscription } from 'rxjs';
 
 export class TimerComponent implements OnInit {
   @Input() count: number;
-  constructor(private timerManagement: TimerManagementService ) { }
+  @Output() finalCount = new EventEmitter<boolean>();
+  constructor(
+    private timerManagement: TimerManagementService,
+    private jokesManagement: JokesManagementService
+
+    ) { }
   timer: number;
   timerSubscription: Subscription;
 
@@ -27,8 +33,13 @@ export class TimerComponent implements OnInit {
   startCountdown() {
     this.timerSubscription = timer(0, 1000).subscribe((t) => {
       this.timer = this.count - t;
-      if (this.timer < 0) {
-        this.resetCountdown();
+      if (t === 5) {
+        if(this.jokesManagement.getFavoriteJokes().length < 10) {
+          this.finalCount.emit(true);
+          this.resetCountdown();
+        } else {
+          this.finalCount.emit(false);
+        }
       }
     });
   }
