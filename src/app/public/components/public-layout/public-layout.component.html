@@ -1,8 +1,24 @@
 <div class="public-layout-container">
-  <div class="public-jokes">
-    public jokes
+  <div class="public-jokes-container">
+    <mat-card class="public-jokes-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>shuffle</mat-icon>
+        <mat-card-title>Random Jokes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-jokes [jokes]="getRandomJokes()"></app-jokes>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <div class="login-card">
-    <app-login></app-login>
+  <div class="favorites-jokes-container">
+    <mat-card class="favorites-jokes-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>favorite</mat-icon>
+        <mat-card-title>Favorites Jokes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <app-jokes [jokes]="getFavoriteJokes()"></app-jokes>
+        </mat-card-content>
+    </mat-card>
   </div>
 </div>

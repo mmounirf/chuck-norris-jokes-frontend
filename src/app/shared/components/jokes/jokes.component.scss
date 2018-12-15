@@ -1,0 +1,16 @@
+.jokes-list{
+  list-style: none;
+  padding: 0;
+
+  .joke-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    p{
+      font-size: 14px;
+    }
+  }
+
+}

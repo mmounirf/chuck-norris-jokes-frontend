@@ -1,3 +1,6 @@
+import { MaterialModule } from './../shared/modules/material/material.module';
+import { JokesComponent } from '../shared/components/jokes/jokes.component';
+import { JokesResolverService } from './resolvers/jokes-resolver.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,15 +11,19 @@ import { PublicLayoutComponent } from './components/public-layout/public-layout.
 const publicRoutes: Routes = [
   {
     path: '',
-    component: PublicLayoutComponent
+    component: PublicLayoutComponent,
+    resolve: {
+      jokes: JokesResolverService
+    }
   }
 ];
 
 @NgModule({
-  declarations: [LoginComponent, PublicLayoutComponent],
+  declarations: [LoginComponent, PublicLayoutComponent, JokesComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(publicRoutes)
+    RouterModule.forChild(publicRoutes),
+    MaterialModule
   ]
 })
 export class PublicModule { }

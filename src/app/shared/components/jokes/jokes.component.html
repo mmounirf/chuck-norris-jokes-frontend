@@ -1,0 +1,12 @@
+<ul class="jokes-list">
+    <li *ngFor="let joke of jokes" id="{{joke.id}}">
+      <div class="joke-container">
+          <button mat-icon-button (click)="addToFavorites(joke)" [disabled]="getJokesLength() >= 10">
+              <mat-icon>{{isInFavorites(joke.id) ? 'favorite' : 'favorite_border'}}</mat-icon>
+          </button>
+          <p>{{joke.joke}}</p>
+      </div>
+      <mat-divider></mat-divider>
+    </li>
+    <p *ngIf="!jokes || jokes.length < 1">No jokes yet 😥</p>
+</ul>
