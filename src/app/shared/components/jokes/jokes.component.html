@@ -1,12 +1,25 @@
-<ul class="jokes-list">
-    <li *ngFor="let joke of jokes" id="{{joke.id}}">
+<ul class="random-jokes-list" *ngIf="type==='random'">
+    <li *ngFor="let joke of jokes; last as isLast" id="{{joke.id}}">
       <div class="joke-container">
-          <button mat-icon-button (click)="addToFavorites(joke)" [disabled]="getJokesLength() >= 10">
+          <button mat-icon-button (click)="addToFavorites(joke)">
               <mat-icon>{{isInFavorites(joke.id) ? 'favorite' : 'favorite_border'}}</mat-icon>
           </button>
           <p>{{joke.joke}}</p>
       </div>
-      <mat-divider></mat-divider>
+      <mat-divider [inset]="true" *ngIf="!isLast"></mat-divider>
     </li>
-    <p *ngIf="!jokes || jokes.length < 1">No jokes yet 😥</p>
+    <p *ngIf="!jokes || jokes.length < 1">No random jokes yet 😥</p>
+</ul>
+
+<ul class="favorite-jokes-list" *ngIf="type==='favorites'">
+    <li *ngFor="let joke of jokes; last as isLast" id="{{joke.id}}">
+      <div class="joke-container">
+          <button mat-icon-button (click)="removeFromFavorites(joke.id)">
+              <mat-icon>delete_forever</mat-icon>
+          </button>
+          <p>{{joke.joke}}</p>
+      </div>
+      <mat-divider [inset]="true" *ngIf="!isLast"></mat-divider>
+    </li>
+    <p *ngIf="!jokes || jokes.length < 1">No favorite jokes yet 😥</p>
 </ul>

@@ -1,7 +1,8 @@
-.jokes-list{
+.random-jokes-list, .favorite-jokes-list{
   list-style: none;
   padding: 0;
-
+  max-height: 400px;
+  overflow: auto;
   .joke-container{
     display: flex;
     flex-direction: row;
@@ -12,5 +13,5 @@
       font-size: 14px;
     }
   }
-
 }
+

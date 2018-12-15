@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class JokesComponent implements OnInit {
   @Input() jokes: Array<Joke>;
+  @Input() type: string;
   constructor(private jokesManagement: JokesManagementService) { }
 
   ngOnInit() {
@@ -25,6 +26,10 @@ export class JokesComponent implements OnInit {
     } else {
       this.jokesManagement.removeFromFavorites(joke.id);
     }
+  }
+
+  removeFromFavorites(id) {
+    this.jokesManagement.removeFromFavorites(id)
   }
 
   getJokesLength(): number {
