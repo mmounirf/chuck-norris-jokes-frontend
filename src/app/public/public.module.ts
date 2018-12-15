@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { PublicLayoutComponent } from './components/public-layout/public-layout.component';
+import { TimerComponent } from '../shared/components/timer/timer.component';
 
 const publicRoutes: Routes = [
   {
@@ -19,11 +20,11 @@ const publicRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LoginComponent, PublicLayoutComponent, JokesComponent],
+  declarations: [LoginComponent, PublicLayoutComponent, JokesComponent, TimerComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(publicRoutes),
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class PublicModule { }
