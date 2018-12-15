@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material';
 import { JokesManagementService } from './../../services/jokes-management.service';
 import { TimerManagementService } from './../../services/timer-management.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
@@ -16,7 +17,8 @@ export class TimerComponent implements OnInit {
   @Output() finalCount = new EventEmitter<boolean>();
   constructor(
     private timerManagement: TimerManagementService,
-    private jokesManagement: JokesManagementService
+    private jokesManagement: JokesManagementService,
+    private snackBar: MatSnackBar
 
     ) { }
   timer: number;
@@ -34,10 +36,11 @@ export class TimerComponent implements OnInit {
     this.timerSubscription = timer(0, 1000).subscribe((t) => {
       this.timer = this.count - t;
       if (t === 5) {
-        if(this.jokesManagement.getFavoriteJokes().length < 10) {
+        if (this.jokesManagement.getFavoriteJokes().length < 10) {
           this.finalCount.emit(true);
           this.resetCountdown();
         } else {
+          this.snackBar.open('⚠️ Favorite list max limit reached', 'Dismiss');
           this.finalCount.emit(false);
         }
       }

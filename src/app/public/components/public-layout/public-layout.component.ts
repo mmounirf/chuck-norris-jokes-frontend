@@ -21,7 +21,6 @@ export class PublicLayoutComponent implements OnInit {
   toggleCount = new EventEmitter<boolean>();
   ngOnInit() {
     this.jokesManagement.setRandomJokes(this.route.snapshot.data.jokes.data);
-
     const storedJokes = JSON.parse(window.localStorage.getItem('favorite_jokes'));
     storedJokes ? this.jokesManagement.setFavoriteJokes(storedJokes) : this.jokesManagement.setFavoriteJokes([]);
 
@@ -43,7 +42,10 @@ export class PublicLayoutComponent implements OnInit {
   addJoke(isCounting) {
     if (isCounting) {
       this.apiService.getRandomJoke().subscribe((joke) => {
-        this.jokesManagement.addToFavorites(joke.data[0]);
+        // Add joke to favorites, only if it is unqiue one.
+        if (!this.jokesManagement.isInFavorites(joke.data[0].id)) {
+          this.jokesManagement.addToFavorites(joke.data[0]);
+        }
       });
     } else {
       this.toggleCounting();
