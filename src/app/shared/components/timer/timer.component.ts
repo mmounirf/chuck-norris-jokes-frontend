@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { TimerManagementService } from './../../services/timer-management.service';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 
 @Component({
@@ -10,27 +11,37 @@ import { timer, Subscription } from 'rxjs';
 
 
 export class TimerComponent implements OnInit {
-  constructor() { }
+  @Input() count: number;
+  constructor(private timerManagement: TimerManagementService ) { }
   timer: number;
-  private timerSubscription: Subscription;
+  timerSubscription: Subscription;
+
 
   ngOnInit() {
-    this.startCountdown(5);
+    this.startCountdown();
+    this.timerManagement.isCounting.subscribe((isCounting) => {
+      isCounting ? this.startCountdown() : this.stopCountdown();
+    });
   }
 
-  startCountdown(count: number) {
+  startCountdown() {
     this.timerSubscription = timer(0, 1000).subscribe((t) => {
-      this.timer = count - t;
+      this.timer = this.count - t;
       if (this.timer < 0) {
-        this.resetCountdown(count);
+        this.resetCountdown();
       }
     });
   }
 
-  resetCountdown(count) {
-    this.timer = count;
+  resetCountdown() {
+    this.timer = this.count;
     this.timerSubscription.unsubscribe();
-    this.startCountdown(count);
+    this.startCountdown();
+  }
+
+  stopCountdown() {
+    this.timerSubscription.unsubscribe();
+    this.timer = this.count;
   }
 
 }

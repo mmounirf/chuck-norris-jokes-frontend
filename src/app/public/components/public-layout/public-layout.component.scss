@@ -18,6 +18,16 @@
         width: 100%;
         position: absolute;
       }
+
+      .favorites-jokes-card{
+        mat-card-header{
+          align-items: center;
+
+          mat-card-title{
+            margin: 0;
+          }
+        }
+      }
     }
 }
 
