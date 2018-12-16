@@ -5,7 +5,9 @@ import { MatSnackBar } from '@angular/material';
   providedIn: 'root'
 })
 export class AlertService {
-
+    /**
+   * @ignore
+   */
   constructor(
     private snackbar: MatSnackBar
   ) { }

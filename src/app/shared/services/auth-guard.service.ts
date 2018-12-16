@@ -9,7 +9,9 @@ import { Router, CanActivate } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate {
-
+    /**
+   * @ignore
+   */
   constructor(
     public router: Router,
     private alert: AlertService,

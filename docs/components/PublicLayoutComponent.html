@@ -1,0 +1,842 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontmen-angular-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontmen-angular-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PublicLayoutComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/public/components/public-layout/public-layout.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-public-layout</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./public-layout.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./public-layout.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isCounting">isCounting</a>
+                            </li>
+                            <li>
+                                <a href="#toggleCount">toggleCount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addJoke">addJoke</a>
+                            </li>
+                            <li>
+                                <a href="#getFavoriteJokes">getFavoriteJokes</a>
+                            </li>
+                            <li>
+                                <a href="#getRandomJokes">getRandomJokes</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleCounting">toggleCounting</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, jokesManagement: <a href="../injectables/JokesManagementService.html">JokesManagementService</a>, timerManagement: <a href="../injectables/TimerManagementService.html">TimerManagementService</a>, apiService: <a href="../injectables/ApiService.html">ApiService</a>, auth: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jokesManagement</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/JokesManagementService.html" target="_self" >JokesManagementService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>timerManagement</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TimerManagementService.html" target="_self" >TimerManagementService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addJoke"></a>
+                        <span class="name">
+                            <b>
+                            addJoke
+                            </b>
+                            <a href="#addJoke"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addJoke(isCounting)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>isCounting</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getFavoriteJokes"></a>
+                        <span class="name">
+                            <b>
+                            getFavoriteJokes
+                            </b>
+                            <a href="#getFavoriteJokes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getFavoriteJokes()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/Joke.html" target="_self" >Array&lt;Joke&gt;</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRandomJokes"></a>
+                        <span class="name">
+                            <b>
+                            getRandomJokes
+                            </b>
+                            <a href="#getRandomJokes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getRandomJokes()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/Joke.html" target="_self" >Array&lt;Joke&gt;</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleCounting"></a>
+                        <span class="name">
+                            <b>
+                            toggleCounting
+                            </b>
+                            <a href="#toggleCounting"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>toggleCounting()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isCounting"></a>
+                        <span class="name">
+                            <b>
+                            isCounting
+                            </b>
+                            <a href="#isCounting"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isCounting:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Boolean flag to check if the counter is working or not. Default is true.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleCount"></a>
+                        <span class="name">
+                            <b>
+                            toggleCount
+                            </b>
+                            <a href="#toggleCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>toggleCount:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;boolean&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/public/components/public-layout/public-layout.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitter that emits boolean value to toggle timer state</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AuthService } from &#x27;./../../../shared/services/auth.service&#x27;;
+import { ApiService } from &#x27;./../../../shared/services/api.service&#x27;;
+import { TimerManagementService } from &#x27;./../../../shared/services/timer-management.service&#x27;;
+import { JokesManagementService } from &#x27;./../../../shared/services/jokes-management.service&#x27;;
+import { Joke } from &#x27;src/app/shared/interfaces/joke&#x27;;
+import { Component, OnInit, EventEmitter } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-public-layout&#x27;,
+  templateUrl: &#x27;./public-layout.component.html&#x27;,
+  styleUrls: [&#x27;./public-layout.component.scss&#x27;]
+})
+export class PublicLayoutComponent implements OnInit {
+  constructor(
+    private route: ActivatedRoute,
+    private jokesManagement: JokesManagementService,
+    private timerManagement: TimerManagementService,
+    private apiService: ApiService,
+    private auth: AuthService,
+    private router: Router
+  ) { }
+
+  /**
+  Boolean flag to check if the counter is working or not. Default is true.
+  */
+  isCounting &#x3D; true;
+  /**
+  Event emitter that emits boolean value to toggle timer state
+  */
+  toggleCount &#x3D; new EventEmitter&lt;boolean&gt;();
+  ngOnInit() {
+    this.jokesManagement.setRandomJokes(this.route.snapshot.data.jokes.data);
+    const storedJokes &#x3D; JSON.parse(window.localStorage.getItem(&#x27;CH_favorite_jokes&#x27;));
+    storedJokes ? this.jokesManagement.setFavoriteJokes(storedJokes) : this.jokesManagement.setFavoriteJokes([]);
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate([&#x27;dashboard&#x27;]);
+    }
+  }
+
+  getRandomJokes(): Array&lt;Joke&gt; {
+    return this.jokesManagement.getRandomJokes();
+  }
+
+  getFavoriteJokes(): Array&lt;Joke&gt; {
+    return this.jokesManagement.getFavoriteJokes();
+  }
+
+  toggleCounting() {
+    this.isCounting &#x3D; !this.isCounting;
+    this.isCounting ? this.timerManagement.startCounting() : this.timerManagement.stopCounting();
+  }
+
+  addJoke(isCounting) {
+    if (isCounting) {
+      this.apiService.getRandomJoke().subscribe((joke) &#x3D;&gt; {
+        // Add joke to favorites, only if it is unqiue one.
+        if (!this.jokesManagement.isInFavorites(joke.data[0].id)) {
+          this.jokesManagement.addToFavorites(joke.data[0]);
+        }
+      });
+    } else {
+      this.toggleCounting();
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;public-layout-container&quot;&gt;
+  &lt;div class&#x3D;&quot;public-jokes-container&quot;&gt;
+    &lt;mat-card class&#x3D;&quot;public-jokes-card&quot;&gt;
+      &lt;mat-card-header&gt;
+        &lt;mat-card-title&gt;Random Jokes&lt;/mat-card-title&gt;
+      &lt;/mat-card-header&gt;
+      &lt;mat-card-content&gt;
+        &lt;app-jokes [jokes]&#x3D;&quot;getRandomJokes()&quot; [type]&#x3D;&quot;&#x27;random&#x27;&quot;&gt;&lt;/app-jokes&gt;
+      &lt;/mat-card-content&gt;
+    &lt;/mat-card&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;favorites-jokes-container&quot;&gt;
+    &lt;mat-card class&#x3D;&quot;favorites-jokes-card&quot;&gt;
+        &lt;app-timer [count]&#x3D;&quot;5&quot; (finalCount)&#x3D;&quot;addJoke($event)&quot;&gt;&lt;/app-timer&gt;
+      &lt;mat-card-header&gt;
+        &lt;mat-card-title&gt;Favorites Jokes&lt;/mat-card-title&gt;
+        &lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
+        &lt;button mat-icon-button (click)&#x3D;&quot;toggleCounting()&quot; color&#x3D;&quot;accent&quot;&gt;
+            &lt;mat-icon&gt;{{isCounting ? &#x27;timer&#x27; : &#x27;timer_off&#x27;}}&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/mat-card-header&gt;
+      &lt;mat-card-content&gt;
+          &lt;app-jokes [jokes]&#x3D;&quot;getFavoriteJokes()&quot; [type]&#x3D;&quot;&#x27;favorites&#x27;&quot;&gt;&lt;/app-jokes&gt;
+        &lt;/mat-card-content&gt;
+    &lt;/mat-card&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./public-layout.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.public-layout-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+    .public-jokes-container, .favorites-jokes-container{
+      width: calc(50% - 40px);
+      min-width: 300px;
+      margin: 20px;
+    }
+
+    .favorites-jokes-container{
+      app-timer{
+        margin: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+      }
+
+      .favorites-jokes-card{
+        mat-card-header{
+          align-items: center;
+
+          mat-card-title{
+            margin: 0;
+          }
+        }
+      }
+    }
+}
+
+:host ::ng-deep{
+  .mat-progress-bar{
+    border-radius: 4px 4px 0 0!important;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="public-layout-container">  <div class="public-jokes-container">    <mat-card class="public-jokes-card">      <mat-card-header>        <mat-card-title>Random Jokes</mat-card-title>      </mat-card-header>      <mat-card-content>        <app-jokes [jokes]="getRandomJokes()" [type]="\'random\'"></app-jokes>      </mat-card-content>    </mat-card>  </div>  <div class="favorites-jokes-container">    <mat-card class="favorites-jokes-card">        <app-timer [count]="5" (finalCount)="addJoke($event)"></app-timer>      <mat-card-header>        <mat-card-title>Favorites Jokes</mat-card-title>        <span class="spacer"></span>        <button mat-icon-button (click)="toggleCounting()" color="accent">            <mat-icon>{{isCounting ? \'timer\' : \'timer_off\'}}</mat-icon>        </button>      </mat-card-header>      <mat-card-content>          <app-jokes [jokes]="getFavoriteJokes()" [type]="\'favorites\'"></app-jokes>        </mat-card-content>    </mat-card>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'JokesComponent', 'selector': 'app-jokes'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProtectedLayoutComponent', 'selector': 'app-protected-layout'},{'name': 'PublicLayoutComponent', 'selector': 'app-public-layout'},{'name': 'TimerComponent', 'selector': 'app-timer'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PublicLayoutComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PublicLayoutComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -9,7 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./jokes.component.scss']
 })
 export class JokesComponent implements OnInit {
+      /**
+    Array of jokes to display in the component list
+  */
   @Input() jokes: Array<Joke>;
+      /**
+    Type of jokes list. Currently supports 'random' and 'favorites'.
+  */
   @Input() type: string;
   constructor(
     private jokesManagement: JokesManagementService,
@@ -20,10 +26,15 @@ export class JokesComponent implements OnInit {
 
   }
 
+    /**
+   * @ignore
+   */
   isInFavorites(id): boolean {
     return this.jokesManagement.isInFavorites(id);
   }
-
+    /**
+   * @ignore
+   */
   addToFavorites(joke) {
     // Add joke to favorites, if it is unqiue one.
     if (!this.isInFavorites(joke.id)) {
@@ -40,10 +51,16 @@ export class JokesComponent implements OnInit {
     }
   }
 
+/**
+   * @ignore
+   */
   removeFromFavorites(id) {
     this.jokesManagement.removeFromFavorites(id)
   }
 
+      /**
+   * @ignore
+   */
   getJokesLength(): number {
     return this.jokesManagement.getFavoriteJokes().length;
   }

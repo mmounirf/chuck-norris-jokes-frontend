@@ -12,7 +12,9 @@ const API_URL = environment.apiUrl;
 })
 
 export class ApiService {
-
+    /**
+   * @ignore
+   */
   constructor(private http: HttpClient) { }
 
   public getRandomJokes(): Observable<Array<Joke>> {

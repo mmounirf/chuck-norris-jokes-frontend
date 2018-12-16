@@ -4,6 +4,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class TimerManagementService {
   isCounting = new EventEmitter<boolean>();
+    /**
+   * @ignore
+   */
   constructor() { }
 
   startCounting() {

@@ -20,7 +20,14 @@ export class PublicLayoutComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) { }
+
+  /**
+  Boolean flag to check if the counter is working or not. Default is true.
+  */
   isCounting = true;
+  /**
+  Event emitter that emits boolean value to toggle timer state
+  */
   toggleCount = new EventEmitter<boolean>();
   ngOnInit() {
     this.jokesManagement.setRandomJokes(this.route.snapshot.data.jokes.data);

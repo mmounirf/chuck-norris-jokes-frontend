@@ -13,8 +13,17 @@ import { timer, Subscription } from 'rxjs';
 
 
 export class TimerComponent implements OnInit {
+    /**
+    The number that the timer will start counting to
+  */
   @Input() count: number;
+    /**
+    method that emits boolean value when a complete loop ends.
+  */
   @Output() finalCount = new EventEmitter<boolean>();
+    /**
+   * @ignore
+   */
   constructor(
     private timerManagement: TimerManagementService,
     private jokesManagement: JokesManagementService,
@@ -26,7 +35,6 @@ export class TimerComponent implements OnInit {
 
 
   ngOnInit() {
-
     this.startCountdown();
     this.timerManagement.isCounting.subscribe((isCounting) => {
       isCounting ? this.startCountdown() : this.stopCountdown();
