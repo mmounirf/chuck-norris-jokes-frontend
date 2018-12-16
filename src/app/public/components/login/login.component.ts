@@ -1,3 +1,4 @@
+import { AuthService } from './../../../shared/services/auth.service';
 import { AlertService } from './../../../shared/services/alert.service';
 import { ApiService } from './../../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,11 +19,16 @@ export class LoginComponent implements OnInit {
   constructor(
     private apiSerivce: ApiService,
     private alert: AlertService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
 
     ) { }
 
   ngOnInit() {
+    // console.log(this.auth.isAuthenticated())
+    // if (this.auth.isAuthenticated()) {
+    //   this.router.navigate(['login']);
+    // }
   }
 
   onSubmit() {
@@ -37,7 +43,7 @@ export class LoginComponent implements OnInit {
         })
       );
     }, (error) => {
-      this.alert.show(`⚠️ ${error.error.err}`, 'Dismiss', null);
+      this.alert.show(`⚠️ ${error.error.err || error.statusText}`, 'Dismiss', null);
     });
   }
 

@@ -26,4 +26,10 @@ export class ApiService {
   public login(body): Observable<User> {
     return this.http.post<User>(`${API_URL}/login`, body);
   }
+
+  // Verify logged in user token
+  public verify() {
+    const token = JSON.parse(window.localStorage.getItem('CH_user')).token;
+    return this.http.get(`${API_URL}/login/verify`, {headers: {Authorization: `Bearer ${token}`} });
+  }
 }
