@@ -19,22 +19,28 @@ export class AuthGuardService implements CanActivate {
     ) { }
 
   canActivate(): Observable<boolean> | boolean {
-    const subject = new Subject<boolean>();
-    // Verify token over the gateway
-    this.api.verify().subscribe((res) => {
-      if (res['msg'] === 'Authorized') {
-        subject.next(true);
-      } else {
+    if (this.auth.isLoggedIn()) {
+      const subject = new Subject<boolean>();
+      // Verify token over the gateway
+      this.api.verify().subscribe((res) => {
+        if (res['msg'] === 'Authorized') {
+          subject.next(true);
+        } else {
+          subject.next(false);
+          this.router.navigate(['login']);
+        }
+      }, (error) => {
+        this.alert.show(error.error.err);
         subject.next(false);
         this.router.navigate(['login']);
-      }
-    }, (error) => {
-      this.alert.show(error.error.err);
-      subject.next(false);
+      }, () => {
+        subject.complete();
+      });
+      return subject;
+    } else {
       this.router.navigate(['login']);
-    }, () => {
-      subject.complete();
-    });
-    return subject;
+      return false;
+    }
+
   }
 }

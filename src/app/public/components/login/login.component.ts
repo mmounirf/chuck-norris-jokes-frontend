@@ -33,11 +33,13 @@ export class LoginComponent implements OnInit {
     this.apiSerivce.login(this.form.value).subscribe((data: User) => {
       window.localStorage.clear();
       window.localStorage.setItem('CH_user', JSON.stringify({
-          firstname: data.user.firstname,
-          lastname: data.user.lastname,
-          email: data.user.email,
-          guid: data.user.guid,
-          token:  data.token
+        token:  data.token,
+        user: {
+            firstname: data.user.firstname,
+            lastname: data.user.lastname,
+            email: data.user.email,
+            guid: data.user.guid,
+          }
         })
       );
       this.router.navigate(['dashboard']);

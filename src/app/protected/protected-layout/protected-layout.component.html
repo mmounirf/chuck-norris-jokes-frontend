@@ -1,3 +1,10 @@
-<p>
-  protected-layout works!
-</p>
+<div class="protected-layout-container">
+    <mat-card class="favorites-jokes-card">
+      <mat-card-header>
+        <mat-card-title>Your Favorites Jokes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <app-jokes [jokes]="getUserFavoriteJokes()" [type]="'favorites'"></app-jokes>
+        </mat-card-content>
+    </mat-card>
+</div>

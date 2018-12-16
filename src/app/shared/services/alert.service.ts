@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 
 @Injectable({
@@ -6,9 +6,15 @@ import { MatSnackBar } from '@angular/material';
 })
 export class AlertService {
 
-  constructor(private snackbar: MatSnackBar) { }
+  constructor(
+    private snackbar: MatSnackBar
+  ) { }
 
-  show(content: string, button?: string, duration?: number) {
-    this.snackbar.open(content, button ? button : null, {duration: duration ? duration : 3000});
+  public show(content: string, button?: string, duration?: number) {
+    setTimeout(() => {
+      this.snackbar.open(content, button ? button : null, {duration: duration ? duration : 3000});
+    });
   }
+
+
 }

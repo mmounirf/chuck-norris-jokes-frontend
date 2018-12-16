@@ -32,4 +32,8 @@ export class ApiService {
     const token = JSON.parse(window.localStorage.getItem('CH_user')).token;
     return this.http.get(`${API_URL}/login/verify`, {headers: {Authorization: `Bearer ${token}`} });
   }
+
+  public getUserJokes() {
+
+  }
 }

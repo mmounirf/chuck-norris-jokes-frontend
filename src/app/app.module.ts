@@ -1,4 +1,5 @@
-import { MaterialModule } from './shared/modules/material/material.module';
+import { SharedModule } from './shared/modules/shared.module';
+import { MaterialModule } from './shared/modules/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,17 +11,18 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    PageNotFoundComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
+  ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

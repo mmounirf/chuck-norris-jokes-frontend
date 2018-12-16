@@ -1,4 +1,6 @@
+import { AlertService } from './../../shared/services/alert.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-protected-layout',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProtectedLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private alert: AlertService
+  ) { }
 
   ngOnInit() {
+    const userData: User = JSON.parse(localStorage.getItem('CH_user'));
+    this.alert.show(`Welcome back ${userData.user.firstname} ${userData.user.lastname}`);
   }
 
+  getUserFavoriteJokes(userId) {
+    return [];
+  }
 }
