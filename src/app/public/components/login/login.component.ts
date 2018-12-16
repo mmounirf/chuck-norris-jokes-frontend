@@ -1,4 +1,3 @@
-import { AuthService } from './../../../shared/services/auth.service';
 import { AlertService } from './../../../shared/services/alert.service';
 import { ApiService } from './../../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,17 +18,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private apiSerivce: ApiService,
     private alert: AlertService,
-    private router: Router,
-    private auth: AuthService
+    private router: Router
 
     ) { }
 
-  ngOnInit() {
-    // console.log(this.auth.isAuthenticated())
-    // if (this.auth.isAuthenticated()) {
-    //   this.router.navigate(['login']);
-    // }
-  }
+  ngOnInit() {}
 
   onSubmit() {
     this.apiSerivce.login(this.form.value).subscribe((data: User) => {
