@@ -1,3 +1,4 @@
+import { AuthService } from './../../../shared/services/auth.service';
 import { AlertService } from './../../../shared/services/alert.service';
 import { ApiService } from './../../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,15 +19,19 @@ export class LoginComponent implements OnInit {
   constructor(
     private apiSerivce: ApiService,
     private alert: AlertService,
-    private router: Router
-
+    private router: Router,
+    private auth: AuthService
     ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
+    }
+  }
 
   onSubmit() {
     this.apiSerivce.login(this.form.value).subscribe((data: User) => {
-      this.router.navigate(['dashboard']);
+      window.localStorage.clear();
       window.localStorage.setItem('CH_user', JSON.stringify({
           firstname: data.user.firstname,
           lastname: data.user.lastname,
@@ -35,6 +40,7 @@ export class LoginComponent implements OnInit {
           token:  data.token
         })
       );
+      this.router.navigate(['dashboard']);
     }, (error) => {
       this.alert.show(`⚠️ ${error.error.err || error.statusText}`, 'Dismiss', null);
     });

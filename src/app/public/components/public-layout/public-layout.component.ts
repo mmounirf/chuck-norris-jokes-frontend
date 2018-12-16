@@ -1,9 +1,10 @@
+import { AuthService } from './../../../shared/services/auth.service';
 import { ApiService } from './../../../shared/services/api.service';
 import { TimerManagementService } from './../../../shared/services/timer-management.service';
 import { JokesManagementService } from './../../../shared/services/jokes-management.service';
 import { Joke } from 'src/app/shared/interfaces/joke';
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-public-layout',
@@ -15,7 +16,9 @@ export class PublicLayoutComponent implements OnInit {
     private route: ActivatedRoute,
     private jokesManagement: JokesManagementService,
     private timerManagement: TimerManagementService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private auth: AuthService,
+    private router: Router
   ) { }
   isCounting = true;
   toggleCount = new EventEmitter<boolean>();
@@ -23,6 +26,9 @@ export class PublicLayoutComponent implements OnInit {
     this.jokesManagement.setRandomJokes(this.route.snapshot.data.jokes.data);
     const storedJokes = JSON.parse(window.localStorage.getItem('CH_favorite_jokes'));
     storedJokes ? this.jokesManagement.setFavoriteJokes(storedJokes) : this.jokesManagement.setFavoriteJokes([]);
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
+    }
   }
 
   getRandomJokes(): Array<Joke> {
